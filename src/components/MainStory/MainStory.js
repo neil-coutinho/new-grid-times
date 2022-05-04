@@ -16,7 +16,10 @@ const MainStory = ({
         <Heading>{title}</Heading>
       </a>
       <Abstract>
-        <Location>{location}</Location> — {abstract}
+       
+          <Location>{location}</Location> — {abstract}
+       
+       
       </Abstract>
       <ReadMore href="/story">Continue Reading…</ReadMore>
     </Wrapper>
@@ -40,10 +43,16 @@ const Heading = styled.h2`
   line-height: 1.3;
 `;
 
+
+
 const Abstract = styled.p`
   font-size: 1rem;
   margin-bottom: 1em;
   white-space: pre-wrap;
+  -webkit-line-clamp: 8;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 const Location = styled.span`
