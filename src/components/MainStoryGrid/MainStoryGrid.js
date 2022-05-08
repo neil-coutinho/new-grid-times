@@ -27,7 +27,7 @@ const MainStoryGrid = () => {
             <StoryWrapper key={story.id}>
               <SecondaryStory  {...story} />
             </StoryWrapper>
-           
+
           ))}
         </StoryList>
       </SecondaryStorySection>
@@ -36,7 +36,7 @@ const MainStoryGrid = () => {
         <SectionTitle>Opinion</SectionTitle>
         <OpinionStoryList>
           {OPINION_STORIES.map((story, index) => (
-             <OpinionStoryWrapper key={story.id}>
+            <OpinionStoryWrapper key={story.id}>
               <OpinionStory  {...story} />
             </OpinionStoryWrapper>
           ))}
@@ -66,7 +66,7 @@ const Wrapper = styled.div`
     'main-story secondary-stories'
     'opinion-stories opinion-stories'
     'advertisement advertisement';
-    gap: 0;
+    gap: 48px 0;
     
     
   }
@@ -85,16 +85,6 @@ const SecondaryStorySection = styled.section`
   grid-area: secondary-stories;
 `;
 
-const OpinionStoryList = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  @media ${QUERIES.tabletOnly} {
-    flex-direction: row;
-    gap: 32px;
-    flex: 1;
-  }
-`;
 
 
 const StoryList = styled.div`
@@ -102,6 +92,17 @@ const StoryList = styled.div`
   flex-direction: column;
  
 `;
+
+const OpinionStoryList = styled(StoryList)`
+ 
+
+  @media ${QUERIES.tabletOnly} {
+    flex-direction: row;
+    gap: 32px;
+   
+  }
+`;
+
 
 
 const OpinionSection = styled.section`
@@ -114,35 +115,27 @@ const AdvertisementSection = styled.section`
 
 const StoryWrapper = styled.div`
 
-  &:not(last-of-type) {
+  &:not(:last-of-type) {
     border-bottom: 1px solid var(--color-gray-300);
     padding-bottom: 16px;
     margin-bottom: 16px;
-  }
-
-  &:last-child {
-    border-bottom: none;
   }
 
  
  
 `;
 
-const OpinionStoryWrapper = styled.div`
+const OpinionStoryWrapper = styled(StoryWrapper)`
+   flex: 1;
+  @media ${QUERIES.tabletOnly} {
 
-  &:not(last-of-type) {
-    border-bottom: 1px solid var(--color-gray-300);
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-
-    @media ${QUERIES.tabletOnly} {
-      border-bottom: revert;
-      padding-bottom: revert;
-      margin-bottom: revert;
+    &:not(:last-of-type) {
+        border-bottom: revert;
+        padding-bottom: revert;
+        margin-bottom: revert;
+      }
     }
-  }
-
-    
+   
  
 `;
 
