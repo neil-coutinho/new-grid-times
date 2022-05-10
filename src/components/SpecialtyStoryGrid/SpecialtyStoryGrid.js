@@ -49,9 +49,16 @@ const Wrapper = styled.div`
   gap: 48px;
 `;
 
-const MarketsSection = styled.section``;
+const MarketsSection = styled.section`
+  
+`;
 
-const MarketCards = styled.div``;
+const MarketCards = styled.div`
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+ gap: 16px;
+
+`;
 
 const SportsSection = styled.section``;
 
