@@ -60,7 +60,7 @@ const Wrapper = styled.div`
   gap: 48px;
   margin-bottom: 48px;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletOnly} {
     grid-template-columns: 2fr 1fr;
     grid-template-areas: 
     'main-story secondary-stories'
@@ -68,10 +68,9 @@ const Wrapper = styled.div`
     'advertisement advertisement';
     gap: 48px 0;
     
-    
   }
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     grid-template-columns: 5fr 4fr 2fr;
     grid-template-areas: 
     'main-story secondary-stories opinion-stories'
