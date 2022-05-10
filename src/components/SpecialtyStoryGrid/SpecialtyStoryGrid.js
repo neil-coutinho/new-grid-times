@@ -62,6 +62,10 @@ const MarketCards = styled.div`
 
 const SportsSection = styled.section``;
 
-const SportsStories = styled.div``;
+const SportsStories = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+`;
 
 export default SpecialtyStoryGrid;
